@@ -1,0 +1,23 @@
+
+.sample{
+    /* background-color: #282c34; */
+        /* background-color: #282c34; */
+        color: black;
+        width: 75%;
+        margin: 0 auto;
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        line-height: 1.5;
+}
+
+.typedText{
+    /* visibility: hidden; */
+    width: 40%;
+    height: 30vh;
+    font-size: 22px;
+    padding-left: 10px;
+    padding-top: 8px;
+}

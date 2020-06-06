@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import {connect} from 'react-redux';
+
+import TypingTest from './components/TypingTest';
+import Timer from './components/Timer';
+import DisplayScore from './components/DisplayScore';
 import './App.css';
 
-function App() {
+function App({timeStart,testOver, current}) {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       Typing Test
       </header>
+      <div className='timerScore'>
+        <Timer />
+        
+      </div>
+      
+      {!timeStart && testOver? <DisplayScore /> :<TypingTest />}
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {    
+    timeStart: state.typing.timeStart,
+    testOver: state.typing.testOver,
+    current: state.typing.current,
+  }
+}
 
-export default App;
+export default connect(mapStateToProps,null)(App);
+
